@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DirectionLinkedList.cs" />
     <Compile Include="Models\CommandEnum.cs" />
     <Compile Include="Models\DirectionEnum.cs" />
     <Compile Include="Models\DirectionNode.cs" />

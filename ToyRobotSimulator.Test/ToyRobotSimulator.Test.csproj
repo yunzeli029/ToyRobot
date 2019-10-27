@@ -50,12 +50,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTest\DirectionLinkedListTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="UnitTest\" />
+    <ProjectReference Include="..\ToyRobotSimulator.Core\ToyRobotSimulator.Core.csproj">
+      <Project>{7c4ca17a-8414-44af-ba94-9e20cf7e6b67}</Project>
+      <Name>ToyRobotSimulator.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,12 +9,12 @@ namespace ToyRobotSimulator.Core.Models
     public class DirectionNode<T>
     {
 
-        public T current;
+        public T value;
         public DirectionNode<T> prev;
         public DirectionNode<T> next;
         public DirectionNode(T d)
         {
-            current = d;
+            value = d;
             prev = null;
             next = null;
         }
