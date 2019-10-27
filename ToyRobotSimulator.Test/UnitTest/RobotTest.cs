@@ -65,6 +65,10 @@ namespace ToyRobotSimulator.Test.UnitTest
             var robot = new Robot();
             robot.Move();
             Assert.AreEqual(robot.position.Y, 1);
+            Assert.AreEqual(robot.position.X, 0);
+            Assert.AreEqual(robot.Direction.value, Core.Models.DirectionEnum.NORTH);
+
+
         }
 
         [TestMethod]
@@ -72,6 +76,8 @@ namespace ToyRobotSimulator.Test.UnitTest
         {
             var robot = new Robot();
             robot.RotateLeft();
+            Assert.AreEqual(robot.position.Y, 0);
+            Assert.AreEqual(robot.position.X, 0);
             Assert.AreEqual(robot.Direction.value, Core.Models.DirectionEnum.WEST);
         }
 
@@ -80,6 +86,8 @@ namespace ToyRobotSimulator.Test.UnitTest
         {
             var robot = new Robot();
             robot.RotateRight();
+            Assert.AreEqual(robot.position.Y, 0);
+            Assert.AreEqual(robot.position.X, 0);
             Assert.AreEqual(robot.Direction.value, Core.Models.DirectionEnum.EAST);
         }
 
@@ -90,21 +98,38 @@ namespace ToyRobotSimulator.Test.UnitTest
             var robot = new Robot();
             robot.RotateLeft(); // facing West 
             Assert.AreEqual(robot.Direction.value, Core.Models.DirectionEnum.WEST);
+            Assert.AreEqual(robot.position.X, 0);
+            Assert.AreEqual(robot.position.Y, 0);
 
             robot.Move();
+            Assert.AreEqual(robot.Direction.value, Core.Models.DirectionEnum.WEST);
             Assert.AreEqual(robot.position.X, 0);
             Assert.AreEqual(robot.position.Y, 0);
 
             robot.RotateLeft(); // facing South 
             Assert.AreEqual(robot.Direction.value, Core.Models.DirectionEnum.SOUTH);
-            robot.Move();
             Assert.AreEqual(robot.position.X, 0);
             Assert.AreEqual(robot.position.Y, 0);
 
+            robot.Move();
+            Assert.AreEqual(robot.Direction.value, Core.Models.DirectionEnum.SOUTH);
+            Assert.AreEqual(robot.position.X, 0);
+            Assert.AreEqual(robot.position.Y, 0);
+        }
+
+        [TestMethod]
+        public void RobotMoveToMaxPosition_ShouldNot_FallOff()
+        {
+            var robot = new Robot();
+            for (var i = 0; i < robot.dimension; i++) {
+                robot.Move();
+            }
+            robot.Move();
+            Assert.AreEqual(robot.Direction.value, Core.Models.DirectionEnum.NORTH);
+            Assert.AreEqual(robot.position.X, 0);
+            Assert.AreEqual(robot.position.Y, robot.dimension-1);
         }
 
 
-
-    
     }
 }

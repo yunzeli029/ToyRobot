@@ -19,10 +19,9 @@ namespace ToyRobotSimulator.Core.Components
         private readonly Boundary boundary;
         public DirectionNode<DirectionEnum> Direction;
         public Position position;
-
+        public readonly int dimension = 5;
         /// <summary>Initializes a new instance of the <see cref="Robot"/> class.</summary>
         public Robot() {
-            var dimenssion = 5;
             DirectionList = new DirectionLinkedList<DirectionEnum>(
                 new List<DirectionEnum>() {
                     DirectionEnum.NORTH,
@@ -32,7 +31,7 @@ namespace ToyRobotSimulator.Core.Components
                 });
             position = new Position(0, 0);
             Direction = DirectionList.Head;
-            boundary = new Boundary(0,0, dimenssion-1, dimenssion-1);
+            boundary = new Boundary(0,0, dimension - 1, dimension-1);
         }
 
 
@@ -82,7 +81,7 @@ namespace ToyRobotSimulator.Core.Components
                     }
                     break;
                 case DirectionEnum.WEST:
-                    if (position.Y > boundary.MinX)
+                    if (position.X > boundary.MinX)
                     {
                         position.X -= 1;
                     }
