@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Boundary.cs" />
     <Compile Include="Models\DirectionLinkedList.cs" />
     <Compile Include="Models\CommandEnum.cs" />
     <Compile Include="Models\DirectionEnum.cs" />
     <Compile Include="Models\DirectionNode.cs" />
+    <Compile Include="Models\Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
