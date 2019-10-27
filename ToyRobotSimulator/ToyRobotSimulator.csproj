@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ToyRobotSimulator.Core\ToyRobotSimulator.Core.csproj">
+      <Project>{7c4ca17a-8414-44af-ba94-9e20cf7e6b67}</Project>
+      <Name>ToyRobotSimulator.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

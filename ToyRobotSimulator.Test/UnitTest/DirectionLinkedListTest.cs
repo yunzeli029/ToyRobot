@@ -64,7 +64,7 @@ namespace ToyRobotSimulator.Test.UnitTest
         {
             var testLinkedList = new DirectionLinkedList<int>();
             testLinkedList.InsertFront(10);
-            Assert.Equals(10, testLinkedList.Head.value);
+            Assert.AreEqual(10, testLinkedList.Head.value);
         }
 
         [TestMethod]
@@ -73,7 +73,30 @@ namespace ToyRobotSimulator.Test.UnitTest
             var testLinkedList = new DirectionLinkedList<int>();
             testLinkedList.InsertLast(1);
             testLinkedList.InsertLast(10);
-            Assert.Equals(10, testLinkedList.Tail.value);
+            Assert.AreEqual(10, testLinkedList.Tail.value);
+        }
+
+        [TestMethod]
+        public void WhenAddThreeItems_HeadAndTail_AreLinked()
+        {
+            var testLinkedList = new DirectionLinkedList<int>();
+            testLinkedList.InsertLast(1);
+            testLinkedList.InsertLast(10);
+            testLinkedList.InsertLast(100);
+
+            Assert.AreEqual(testLinkedList.Head.prev.value, testLinkedList.Tail.value);
+            Assert.AreEqual(testLinkedList.Tail.next.value, testLinkedList.Head.value);
+        }
+
+        [TestMethod]
+        public void GetNumber10_Should_Equal10() {
+            var testLinkedList = new DirectionLinkedList<int>();
+            testLinkedList.InsertLast(1);
+            testLinkedList.InsertLast(10);
+            testLinkedList.InsertLast(100);
+
+            var node = testLinkedList.GetNodeByKey(10);
+            Assert.AreEqual(10, node.value);
         }
     }
 }

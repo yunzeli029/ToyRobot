@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToyRobotSimulator.Core.Models
 {
-    enum CommandEnum
+    public enum CommandEnum
     {
         PLACE,
         MOVE,

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToyRobotSimulator.Core.Models;
 
 namespace ToyRobotSimulator
 {
@@ -10,6 +11,9 @@ namespace ToyRobotSimulator
     {
         static void Main(string[] args)
         {
+            
+            Console.WriteLine(DirectionEnum.WEST + 1);
+            Console.ReadKey();
         }
     }
 }
