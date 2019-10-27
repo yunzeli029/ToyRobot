@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Robot.cs" />
     <Compile Include="Models\Boundary.cs" />
     <Compile Include="Models\DirectionLinkedList.cs" />
     <Compile Include="Models\CommandEnum.cs" />
@@ -49,8 +50,6 @@
     <Compile Include="Models\Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Components\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

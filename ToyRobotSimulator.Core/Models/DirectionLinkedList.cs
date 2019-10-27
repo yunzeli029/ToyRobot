@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace ToyRobotSimulator.Core.Models
 {
+    /// <summary>
+    /// Doubly Circular Linked List, the next of the last node will point to the first node
+    /// and the previous pointer of the first node will point to the last node
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class DirectionLinkedList<T>
     {
         private DirectionNode<T> _head;
@@ -17,6 +22,18 @@ namespace ToyRobotSimulator.Core.Models
         {
 
         }
+
+        public DirectionLinkedList(IEnumerable<T> items)
+        {
+            foreach (var item in items)
+            {
+                InsertLast(item);
+            }
+        }
+
+        /// <summary>Gets the node by key.</summary>
+        /// <param name="key">The key.</param>
+        /// <returns></returns>
         public DirectionNode<T> GetNodeByKey(T key)
         {
             DirectionNode<T> temp = _head;
@@ -32,7 +49,7 @@ namespace ToyRobotSimulator.Core.Models
 
             return temp;
         }
-        /// <summary>Inserts a direction at front of the linked list</summary>
+        /// <summary>Inserts an item at front of the linked list</summary>
         /// <param name="data">The data.</param>
         public void InsertFront(T data)
         {
@@ -64,6 +81,8 @@ namespace ToyRobotSimulator.Core.Models
 
         }
 
+        /// <summary>Inserts an item at the end of a linked list</summary>
+        /// <param name="data">The data.</param>
         public void InsertLast(T data)
         {
             DirectionNode<T> newNode = new DirectionNode<T>(data);
@@ -83,7 +102,6 @@ namespace ToyRobotSimulator.Core.Models
                 newNode.next = _head;
                 _head.prev = newNode;
                 _tail = newNode;
-
             }
         }
     }
