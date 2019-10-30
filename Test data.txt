@@ -1,0 +1,67 @@
+### Test 1
+
+    PLACE 0,0,NORTH
+    MOVE
+    REPORT
+
+output:
+    0,1,NORTH
+
+
+### Test 2
+
+    PLACE 0,0,NORTH
+    LEFT
+    REPORT
+
+output:
+    0,0,WEST
+
+### Test 3
+
+    PLACE 1,2,EAST
+    MOVE
+    MOVE
+    LEFT
+    MOVE
+    REPORT
+
+output:
+    3,3,NORTH
+
+### Test 4
+
+    PLACE 0,0,NORTH
+    LEFT
+    MOVE
+    REPORT
+
+output:
+    0,0,WEST
+
+### Test 5
+
+    PLACE 0,0,NORTH
+    RIGHT
+    RIGHT
+    MOVE
+    REPORT
+
+output:
+    0,0,SOUTH
+
+### Test 6
+
+    PLACE 0,0,NORTH
+    MOVE
+    MOVE
+    MOVE
+    MOVE
+    MOVE
+    REPORT
+
+output:
+    0,4,NORTH
+
+
+
